@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "prestart": "rimraf dist && cp \"config.$CONFIG.json\" config.json",
+    "prebuild": "rimraf dist && cp \"config.$CONFIG.json\" config.json"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.6.0",
+    "parcel": "^1.12.3",
+    "rimraf": "^2.6.3",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  }
+}

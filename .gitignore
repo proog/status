@@ -1,0 +1,7 @@
+.vscode/
+.cache/
+dist/
+node_modules/
+config.json
+config.*.json
+!config.example.json

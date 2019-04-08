@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <h3>Status</h3>
+        <h3>{{ title }}</h3>
       </div>
       <div class="col text-right">
         <AppControls
@@ -29,6 +29,7 @@ import StatusTile from "./StatusTile.vue";
 import AppControls from "./AppControls.vue";
 import config from "./config.json";
 
+const title = config.title;
 const webtask = config.webtask;
 const refreshInterval = config.interval;
 const sites = _.orderBy(config.sites, "name").map(site => ({
@@ -43,10 +44,12 @@ export default {
     return {
       sites: sites,
       countdown: refreshInterval,
+      title: title,
       interval: null
     };
   },
   mounted() {
+    document.title = this.title;
     this.startInterval();
     this.refresh();
   },

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "wt": "wt",
-    "build": "wt create --name status --bundle-minify webtask.js"
+    "build": "wt create --name status --bundle-minify status.js"
   },
   "dependencies": {
     "request": "^2.88.0"

@@ -1,10 +1,8 @@
 <template>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <h3>{{ title }}</h3>
-      </div>
-      <div class="col text-right">
+  <div class="w-100 avenir">
+    <div class="flex flex-wrap justify-between items-center pa2 bb b--light-gray">
+      <h3 class="mv0">{{ title }}</h3>
+      <div class="tr">
         <AppControls
           :paused="!interval"
           :countdown="countdown"
@@ -15,8 +13,8 @@
         ></AppControls>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 p-2" v-for="site in sites" :key="site.url">
+    <div class="flex flex-wrap">
+      <div class="w-100 w-50-m w-25-l pa2" v-for="site in sites" :key="site.url">
         <StatusTile :name="site.name" :url="site.url" :status="site.status" :elapsed="site.elapsed"></StatusTile>
       </div>
     </div>

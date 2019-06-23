@@ -1,15 +1,21 @@
 <template>
   <div>
     {{ zeroPadCountdown }}
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" @click="toggle">
-        <i class="fas fa-play" v-if="paused"></i>
-        <i class="fas fa-pause" v-else></i>
-      </button>
-      <button type="button" class="btn btn-primary" @click="refresh">
-        <i class="fas fa-sync-alt" :class="{'fa-spin': loading}"></i>
-      </button>
-    </div>
+    <button
+      type="button"
+      class="ph3 pv2 ba b--light-gray bg-transparent hover-bg-light-gray"
+      @click="toggle"
+    >
+      <i class="fas fa-play" v-if="paused"></i>
+      <i class="fas fa-pause" v-else></i>
+    </button>
+    <button
+      type="button"
+      class="ph3 pv2 ba b--light-gray bg-transparent hover-bg-light-gray"
+      @click="refresh"
+    >
+      <i class="fas fa-sync-alt" :class="{'fa-pulse': loading}"></i>
+    </button>
   </div>
 </template>
 

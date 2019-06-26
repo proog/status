@@ -1,6 +1,6 @@
 <template>
   <a
-    class="db h-100 pa2 ba b--light-gray black no-underline shadow-hover grow"
+    class="db h-100 pa2 ba b--light-gray black no-underline shadow-hover"
     target="_blank"
     rel="noopener noreferrer"
     :href="url"

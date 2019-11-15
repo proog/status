@@ -1,7 +1,5 @@
-import Vue from "vue";
-import App from "./App.vue";
+import App from "./App.svelte";
 
-new Vue({
-  el: "#app",
-  render: h => h(App)
+new App({
+  target: document.getElementById("app")
 });

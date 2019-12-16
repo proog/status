@@ -20,25 +20,24 @@
 </template>
 
 <script>
-import _ from "lodash";
+import { mapGetters } from "vuex";
 
 export default {
-  props: {
-    countdown: Number,
-    paused: Boolean,
-    loading: Boolean
-  },
   computed: {
     zeroPadCountdown() {
-      return _.padStart(`${this.countdown}`, 2, "0");
-    }
+      return `${this.$store.state.countdown}`.padStart(2, "0");
+    },
+    ...mapGetters({
+      loading: "anyLoading",
+      paused: "paused"
+    })
   },
   methods: {
     refresh() {
-      this.$emit("refresh");
+      this.$store.dispatch("refresh");
     },
     toggle() {
-      this.$emit(this.paused ? "resume" : "pause");
+      this.$store.dispatch(this.paused ? "resume" : "pause");
     }
   }
 };

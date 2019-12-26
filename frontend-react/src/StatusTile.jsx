@@ -42,7 +42,7 @@ export default class StatusTile extends React.Component {
     return <i className="fas fa-question" />;
   }
   get prettyUrl() {
-    return _.trimEnd(this.url, "/").replace(/https?:\/\//i, "");
+    return _.trimEnd(this.props.url, "/").replace(/https?:\/\//i, "");
   }
   get statusText() {
     switch (this.props.status) {

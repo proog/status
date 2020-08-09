@@ -1,12 +1,16 @@
 {
   "scripts": {
     "start": "parcel index.html",
+    "configure": "rimraf dist && cp \"config.$CONFIG.json\" config.json",
     "build": "parcel build index.html",
-    "prestart": "rimraf dist && cp \"config.$CONFIG.json\" config.json",
-    "prebuild": "rimraf dist && cp \"config.$CONFIG.json\" config.json"
+    "deploy": "netlify deploy --prod -d dist",
+    "prestart": "npm run configure",
+    "prebuild": "npm run configure",
+    "predeploy": "npm run build"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.6.0",
+    "netlify-cli": "^2.59.0",
     "parcel": "^1.12.4",
     "rimraf": "^2.7.1",
     "vue-template-compiler": "^2.6.11"

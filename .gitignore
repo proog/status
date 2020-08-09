@@ -2,6 +2,7 @@
 .cache/
 dist/
 node_modules/
+deploy.sh
 config.json
 config.*.json
 !config.example.json

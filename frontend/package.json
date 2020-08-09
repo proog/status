@@ -1,9 +1,9 @@
 {
   "scripts": {
     "start": "parcel index.html",
-    "configure": "rimraf dist && cp \"config.$CONFIG.json\" config.json",
-    "build": "parcel build index.html",
-    "deploy": "netlify deploy --prod -d dist",
+    "configure": "cp \"config.$CONFIG.json\" config.json",
+    "build": "rimraf dist && parcel build index.html",
+    "deploy": "netlify deploy --prod --dir=dist --functions=../netlify-functions",
     "prestart": "npm run configure",
     "prebuild": "npm run configure",
     "predeploy": "npm run build"

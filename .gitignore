@@ -6,3 +6,4 @@ deploy.sh
 config.json
 config.*.json
 !config.example.json
+deploy.sh

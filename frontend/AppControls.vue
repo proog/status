@@ -1,20 +1,12 @@
 <template>
   <div>
     {{ zeroPadCountdown }}
-    <button
-      type="button"
-      class="ph3 pv2 ba b--light-gray bg-transparent hover-bg-light-gray"
-      @click="toggle"
-    >
+    <button type="button" class="btn hover:bg-gray-100" @click="toggle">
       <i class="fas fa-play" v-if="paused"></i>
       <i class="fas fa-pause" v-else></i>
     </button>
-    <button
-      type="button"
-      class="ph3 pv2 ba b--light-gray bg-transparent hover-bg-light-gray"
-      @click="refresh"
-    >
-      <i class="fas fa-sync-alt" :class="{'fa-pulse': loading}"></i>
+    <button type="button" class="btn hover:bg-gray-100" @click="refresh">
+      <i class="fas fa-sync-alt" :class="{ 'fa-pulse': loading }"></i>
     </button>
   </div>
 </template>
@@ -29,8 +21,8 @@ export default {
     },
     ...mapGetters({
       loading: "anyLoading",
-      paused: "paused"
-    })
+      paused: "paused",
+    }),
   },
   methods: {
     refresh() {
@@ -38,7 +30,7 @@ export default {
     },
     toggle() {
       this.$store.dispatch(this.paused ? "resume" : "pause");
-    }
-  }
+    },
+  },
 };
 </script>

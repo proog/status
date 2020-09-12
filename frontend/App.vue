@@ -1,14 +1,23 @@
 <template>
-  <div class="w-100 avenir">
-    <div class="flex flex-wrap justify-between items-center pa2 bb b--light-gray">
-      <h3 class="mv0">{{ title }}</h3>
-      <div class="tr">
+  <div class="w-full avenir">
+    <div class="flex flex-wrap justify-between items-center p-2 border shadow">
+      <h3 class="my-0">{{ title }}</h3>
+      <div class="text-right">
         <AppControls></AppControls>
       </div>
     </div>
     <div class="flex flex-wrap">
-      <div class="w-100 w-50-m w-25-l pa2" v-for="site in sites" :key="site.url">
-        <StatusTile :name="site.name" :url="site.url" :status="site.status" :elapsed="site.elapsed"></StatusTile>
+      <div
+        class="w-full p-3 md:w-1/2 lg:w-1/3 xl:w-1/4"
+        v-for="site in sites"
+        :key="site.url"
+      >
+        <StatusTile
+          :name="site.name"
+          :url="site.url"
+          :status="site.status"
+          :elapsed="site.elapsed"
+        ></StatusTile>
       </div>
     </div>
   </div>
@@ -27,8 +36,8 @@ export default {
   },
   computed: mapState({
     title: "title",
-    sites: "sites"
+    sites: "sites",
   }),
-  components: { StatusTile, AppControls }
+  components: { StatusTile, AppControls },
 };
 </script>

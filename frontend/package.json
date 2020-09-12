@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.19",
+    "tailwindcss": "^1.8.8",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4",
     "vuex": "^3.5.1"

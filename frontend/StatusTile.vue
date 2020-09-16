@@ -41,8 +41,6 @@
 </template>
 
 <script>
-import _ from "lodash";
-
 export default {
   props: {
     name: String,
@@ -62,7 +60,8 @@ export default {
       }
     },
     prettyUrl() {
-      return _.trimEnd(this.url, "/").replace(/https?:\/\//i, "");
+      const url = this.url.endsWith("/") ? this.url.slice(0, -1) : this.url;
+      return url.replace(/https?:\/\//i, "");
     },
     isLoading() {
       return this.status === -1;

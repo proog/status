@@ -1,4 +1,3 @@
-import _ from "lodash";
 import Vue from "vue";
 import Vuex from "vuex";
 import config from "./config.json";
@@ -6,15 +5,14 @@ import config from "./config.json";
 const title = config.title;
 const webtask = config.webtask;
 const refreshInterval = config.interval;
-const sites = _(config.sites)
+const sites = config.sites
   .map(site => ({
     name: site.name,
     url: site.url,
     status: -1,
     elapsed: 0
   }))
-  .orderBy("name")
-  .value();
+  .sort((a, b) => (a.name > b.name ? 1 : a.name < b.name ? -1 : 0));
 
 Vue.use(Vuex);
 

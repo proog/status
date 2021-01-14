@@ -1,5 +1,6 @@
 .vscode/
 .cache/
+.vercel/
 dist/
 node_modules/
 deploy.sh

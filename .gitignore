@@ -3,7 +3,7 @@
 dist/
 node_modules/
 deploy.sh
-config.json
+src/config.json
 config.*.json
 !config.example.json
 deploy.sh

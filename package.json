@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
-    "netlify-cli": "^2.59.0",
+    "netlify-cli": "^3.1.0",
     "parcel": "^1.12.4",
     "rimraf": "^3.0.2",
     "vue-template-compiler": "^2.6.11"
@@ -21,6 +21,6 @@
     "tailwindcss": "^1.8.8",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4",
-    "vuex": "^3.5.1"
+    "vuex": "^3.6.0"
   }
 }
